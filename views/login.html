@@ -12,43 +12,44 @@
     
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Todo - Get it done</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Signup</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <section class="login-section">
-    <form>
-        <div class="login-icon icon d-flex align-items-center justify-content-center">
-            <span class="fa fa-user" aria-hidden="true"></span>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">Todo - Get it done</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="signup.html">Signup</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <h3 class="text-center mb-4">Log in</h3>
-        <div class="mb-3">
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-label="Email Address" aria-describedby="emailHelp" placeholder="Email address">
-        </div>
-        <div class="mb-3">
-          <input type="password" class="form-control" id="exampleInputPassword1" aria-label="Password" placeholder="Password">
-        </div>
-        <button type="submit" class="btn btn-primary rounded login-btn submit px-3">Login</button>
-    </form>
-    </section>
+      </nav>
+</header>
+    <div class="login-dark d-flex align-items-center justify-content-center">
+      <form>
+          <div class="illustration"><i class="fas fa-user-lock"></i></div>
+          <div class="mb-3">
+            <input class="form-control" type="email" name="email" placeholder="Email" aria-label="Email">
+          </div>
+          <div class="mb-3">
+            <input class="form-control" type="password" name="password" placeholder="Password" aria-label="Password">
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary">Log In</button>
+          </div>
+      </form>
+    </div>
 </body>
 </html>

@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo - Get it done</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style/profile.css">
 </head>
 <body>
+  <!-- Navbar section -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -24,15 +27,104 @@
                     <a class="nav-link" href="#">Features</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="signup.html">Signup</a>
+                    <a class="nav-link" href="login.html">Sign out</a>
                   </li>
                 </ul>
               </div>
             </div>
           </nav>
     </header>
+
+    <!-- Search and add button -->
+    <div class="row d-flex justify-content-center align-items-center mt-5">
+      <div class="col-md-3">
+        <div class="search">
+          <i class="fas fa-search"></i>
+          <input type="text" class="form-control" placeholder="Search task" aria-label="Search">
+          <button class="btn">Search</button>
+        </div>
+      </div>
+      <div class="col-1">
+        <button class="addBtn"><i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+    <hr>
+
+    <!-- Categories -->
+
+    <!-- Task process -->
+    <div class="container">
+      <div class="d-flex">
+        <div class="col">
+          <h3 class="mb-3"><i class="fas fa-th-list"></i> To-do</h3>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Project
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Project 1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Project 2
+            </label>
+          </div>
+        </div>
+        <div class="col">
+          <h3 class="mb-3"><i class="fas fa-spinner"></i> In progress</h3>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Project 3
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Project 4
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Project 5
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+              Project 6
+            </label>
+          </div>
+        </div>
+        <div class="col">
+          <h3 class="mb-3"><i class="fas fa-check-double"></i> Completed</h3>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Last project
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Last project 2
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+            <label class="form-check-label" for="flexCheckChecked">
+              Last project 3
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

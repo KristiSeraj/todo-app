@@ -58,3 +58,7 @@ body {
 h3 .fas {
     margin-right: 10px;
 }
+
+.dropdown-toggle::after {
+    display: none;
+}

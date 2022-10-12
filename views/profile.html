@@ -36,16 +36,28 @@
     </header>
 
     <!-- Search and add button -->
-    <div class="row d-flex justify-content-center align-items-center mt-5">
-      <div class="col-md-3">
+    <div class="d-flex justify-content-center align-items-center mt-5">
+      <div class="col-md-2">
         <div class="search">
           <i class="fas fa-search"></i>
           <input type="text" class="form-control" placeholder="Search task" aria-label="Search">
-          <button class="btn">Search</button>
         </div>
       </div>
       <div class="col-1">
-        <button class="addBtn"><i class="fas fa-plus"></i></button>
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary">New</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Category</a></li>
+            <li><a class="dropdown-item" href="#">Task</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-1 sort">
+        <button type="button" class="btn sortBtn">Sort</button>
       </div>
     </div>
     <hr>
@@ -53,32 +65,80 @@
     <!-- Categories -->
 
     <!-- Task process -->
+    <!-- TODO -->
     <div class="container">
       <div class="d-flex">
         <div class="col mx-4">
           <h3 class="mb-3"><i class="fas fa-th-list"></i> To-do</h3>
           <div class="col border border-2 rounded p-2">
-            <h5 class="fw-bold">Work with AirBnB Project</h5>
+            <h5 class="fw-bold p-2">Work with AirBnB Project</h5>
+            <h6 class="btn btn-success">Low</h6>
             <p class="fs-6">
               Finish login implementation, search and filters
             </p>
-            <div class="dropdown">
+            <!-- <div class="dropend ms-auto">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-ellipsis-v"></i>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Move to <strong>In progress</strong></a></li>
+                <li><a class="dropdown-item" href="#">Move to <strong>Completed</strong></a></li>
+              </ul>
+            </div> -->
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <div class="collapse" id="collapseExample">
+              <div class="card card-body">
+                <ul>
+                  <li><a class="dropdown-item" href="#">Move to <strong>In progress</strong></a></li>
+                  <li><a class="dropdown-item" href="#">Move to <strong>Completed</strong></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- In progress -->
+        <div class="col mx-4">
+          <h3 class="mb-3"><i class="fas fa-spinner"></i> In progress</h3>
+          <div class="col border border-2 rounded p-2">
+            <h5 class="fw-bold p-2">Write a blog</h5>
+            <h6 class="btn btn-warning">Medium</h6>
+            <p class="fs-6">
+              Finish the last paragraph and insert images explaining structure of web and how does it works.
+            </p>
+            <div class="dropend ms-auto">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Move to <strong>To-do</strong></a></li>
+                <li><a class="dropdown-item" href="#">Move to <strong>In progress</strong></a></li>
+                <li><a class="dropdown-item" href="#">Move to <strong>Completed</strong></a></li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="col">
-          <h3 class="mb-3"><i class="fas fa-spinner"></i> In progress</h3>
-        </div>
-        <div class="col">
+        <!-- Completed -->
+        <div class="col mx-4">
           <h3 class="mb-3"><i class="fas fa-check-double"></i> Completed</h3>
+          <div class="col border border-2 rounded p-2">
+            <h5 class="fw-bold p-2">Check emails</h5>
+            <h6 class="btn btn-danger">High</h6>
+            <p class="fs-6">
+              Check all emails
+            </p>
+            <div class="dropend ms-auto">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-ellipsis-v"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="#">Move to <strong>To-do</strong></a></li>
+                <li><a class="dropdown-item" href="#">Move to <strong>In progress</strong></a></li>
+                <li><a class="dropdown-item" href="#">Move to <strong>Completed</strong></a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>

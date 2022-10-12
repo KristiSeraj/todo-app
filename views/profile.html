@@ -37,14 +37,31 @@
 
     <!-- Search and add button -->
     <div class="d-flex justify-content-center align-items-center mt-5">
-      <div class="col-md-2">
-        <div class="search">
+
+        <div class="btn-group mx-3">
+          <button type="button" class="btn btn-secondary">Filter by</button>
+          <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Category</a></li>
+            <li><a class="dropdown-item" href="#">Status</a></li>
+            <li><a class="dropdown-item" href="#">Priority</a></li>
+          </ul>
+        </div>
+
+
+        <button type="button" class="btn sortBtn mx-3">Sort</button>
+
+
+        <div class="search mx-3">
           <i class="fas fa-search"></i>
           <input type="text" class="form-control" placeholder="Search task" aria-label="Search">
         </div>
-      </div>
-      <div class="col-1">
-        <div class="btn-group">
+
+
+
+        <div class="btn-group mx-3">
           <button type="button" class="btn btn-secondary">New</button>
           <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropdown</span>
@@ -54,11 +71,7 @@
             <li><a class="dropdown-item" href="#">Task</a></li>
           </ul>
         </div>
-      </div>
 
-      <div class="col-1 sort">
-        <button type="button" class="btn sortBtn">Sort</button>
-      </div>
     </div>
     <hr>
 
@@ -72,10 +85,11 @@
           <h3 class="mb-3"><i class="fas fa-th-list"></i> To-do</h3>
           <div class="col border border-2 rounded p-2">
             <h5 class="fw-bold p-2">Work with AirBnB Project</h5>
-            <h6 class="btn btn-success">Low</h6>
             <p class="fs-6">
               Finish login implementation, search and filters
             </p>
+            <h6 class="priority-low"><span>Low</span></h6>
+            <h6 class="category-name"><span>Programming</span></h6>
             <!-- <div class="dropend ms-auto">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-ellipsis-v"></i>

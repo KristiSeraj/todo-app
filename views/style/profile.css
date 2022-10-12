@@ -52,3 +52,17 @@ h3 .fas {
     background-color: #9ca5ad;
     color: #fff;
 }
+
+.priority-low span {
+    padding: 5px;
+    background-color: #3bb637;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.category-name span {
+    padding: 5px;
+    background-color: #9ca5ad;
+    color: #fff;
+    border-radius: 5px;
+}

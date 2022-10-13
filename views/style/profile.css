@@ -52,16 +52,24 @@ h3 .fas {
     background-color: #9ca5ad;
     color: #fff;
 }
+.priority-category {
+    display: flex;
+}
+
+.priority-category h6 {
+    margin-right: .25rem;
+    font-size: 14px;
+}
 
 .priority-low span {
-    padding: 5px;
+    padding: 3px 7px;
     background-color: #3bb637;
     color: #fff;
     border-radius: 5px;
 }
 
 .category-name span {
-    padding: 5px;
+    padding: 3px 7px;
     background-color: #9ca5ad;
     color: #fff;
     border-radius: 5px;

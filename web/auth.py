@@ -5,7 +5,9 @@ from . import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, logout_user, current_user
 
+
 auth = Blueprint('auth', __name__)
+
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -25,6 +27,7 @@ def login():
             flash('Email does not exist.', category='error')
 
     return render_template('login.html', user=current_user)
+
 
 @auth.route('/logout')
 @login_required
@@ -54,8 +57,9 @@ def register():
         elif len(password_confirm) < 7:
             flash('Password must be at least 7 character', category='error')
         else:
-            #add user to db
-            user = User(user_name=user_name, user_email=user_email, user_password=generate_password_hash(user_password, method='sha256'))
+            user = User(user_name=user_name, user_email=user_email,
+                        user_password=generate_password_hash(user_password,
+                                                             method='sha256'))
             db.session.add(user)
             db.session.commit()
             login_user(user, remember=True)

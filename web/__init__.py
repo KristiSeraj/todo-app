@@ -8,6 +8,7 @@ db = SQLAlchemy()
 
 
 def create_app():
+
     app = Flask(__name__)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://todo_dev:todo_dev_pwd@localhost/todo_db'
     app.config['SECRET_KEY'] = 'dev'
@@ -20,7 +21,7 @@ def create_app():
     app.register_blueprint(auth, url_prefix='/')
 
     from .models import User
-    
+
     with app.app_context():
         db.create_all()
 
@@ -33,7 +34,3 @@ def create_app():
         return User.query.get(int(user_id))
 
     return app
-#def create_database(app):
- #   if database_exists('mysql://todo_dev:todo_dev_pwd@localhost/todo_db') is False:
-  #      db.create_all(app=app)
-   #     print('Created database!')

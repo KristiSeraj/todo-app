@@ -57,7 +57,7 @@ def register():
         elif len(password_confirm) < 7:
             flash('Password must be at least 7 character', category='error')
         else:
-            user = User(user_name=user_name, user_email=user_email,
+            user = User(id=uuid.uuid4(), user_name=user_name, user_email=user_email,
                         user_password=generate_password_hash(user_password,
                                                              method='sha256'))
             db.session.add(user)

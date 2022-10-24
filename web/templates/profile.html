@@ -28,14 +28,84 @@
 
 
         <div class="btn-group mx-3">
-          <button type="button" class="btn btn-secondary">New</button>
+          <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#categoryModal">New</button>
           <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Category</a></li>
-            <li><a class="dropdown-item" href="#">Task</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#categoryModal">Category</a></li>
+            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#myModal">Task</a></li>
           </ul>
+        </div>
+
+        <div class="modal fade" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+             <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Create a new task</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+            <!-- Modal body -->
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="taskName" class="form-label">Task name</label>
+                    <input type="text" class="form-control" id="taskName" aria-describedby="">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Task description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Select category</option>
+                      <option value="Programming">Programming</option>
+                      <option value="IT">IT</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <h6>Priority</h6>
+                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
+                    <label class="btn btn-outline-success" for="success-outlined">Low</label>
+                    
+                    <input type="radio" class="btn-check" name="options-outlined" id="warning-outlined" autocomplete="off">
+                    <label class="btn btn-outline-warning" for="warning-outlined">Medium</label>
+                    
+                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                    <label class="btn btn-outline-danger" for="danger-outlined">High</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">Create</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal fade" id="categoryModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+             <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Create a new category</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+            <!-- Modal body -->
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="categoryName" class="form-label">Category name</label>
+                    <input type="text" class="form-control" id="categoryName" aria-describedby="">
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">Create</button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
 
     </div>

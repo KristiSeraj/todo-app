@@ -60,10 +60,11 @@
                     <textarea class="form-control" name="taskDescription" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
                   <div class="mb-3">
-                    <select class="form-select" aria-label="Default select example">
+                    <select name="categories" class="form-select" aria-label="Default select example">
                       <option selected>Select category</option>
-                      <option value="Programming">Programming</option>
-                      <option value="IT">IT</option>
+                      {% for  o in data %}
+                      <option value="{{ o.name }}">{{ o.name }}</option>
+                      {% endfor %}
                     </select>
                   </div>
                   <div class="mb-3">

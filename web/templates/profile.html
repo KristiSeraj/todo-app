@@ -50,7 +50,7 @@
 
             <!-- Modal body -->
               <div class="modal-body">
-                <form>
+                <form action="/create-task" method="POST">
                   <div class="mb-3">
                     <label for="taskName" class="form-label">Task name</label>
                     <input type="text" class="form-control" name="taskName" id="taskName" aria-describedby="">
@@ -58,24 +58,35 @@
                   <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">Task description</label>
                     <textarea class="form-control" name="taskDescription" id="exampleFormControlTextarea1" rows="3"></textarea>
-                  </div>
+           	  </div>
+		  <!--
                   <div class="mb-3">
                     <select name="categories" class="form-select" aria-label="Default select example">
                       <option selected>Select category</option>
-                      {% for  o in data %}
-                      <option value="{{ o.name }}">{{ o.name }}</option>
-                      {% endfor %}
+                      {#% for category in user.user_category %}
+                      <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                      {% endfor %#}
                     </select>
                   </div>
+		  -->
+		  <div class="mb-3">
+  			{% for category in user.user_category %}
+  			<div class="form-check form-check-inline">
+  				<input class="form-check-input" type="checkbox" name="taskCategory" value="{{category}}">
+  				<label class="form-check-label">{{category.category_name}}</label>
+  			</div>
+  			{% endfor %}
+		</div>
+		  
                   <div class="mb-3">
                     <h6>Priority</h6>
-                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
+                    <input type="radio" class="btn-check" name="priorityName" id="success-outlined" autocomplete="off" value="Low">
                     <label class="btn btn-outline-success" for="success-outlined">Low</label>
                     
-                    <input type="radio" class="btn-check" name="options-outlined" id="warning-outlined" autocomplete="off">
+                    <input type="radio" class="btn-check" name="priorityName" id="warning-outlined" autocomplete="off" value="Medium">
                     <label class="btn btn-outline-warning" for="warning-outlined">Medium</label>
                     
-                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                    <input type="radio" class="btn-check" name="priorityName" id="danger-outlined" autocomplete="off" value="High">
                     <label class="btn btn-outline-danger" for="danger-outlined">High</label>
                   </div>
                   <button type="submit" class="btn btn-primary" style="width: 100%;">Create</button>
@@ -112,23 +123,33 @@
     </div>
     <hr>
 
-    <!-- Categories -->
-
     <!-- Task process -->
     <!-- TODO -->
     <div class="container">
       <div class="d-flex">
+	<div class="col mx-4">
+		<h3 class="mb-3">Categories</h3>
+		{% for category in user.user_category %}
+		<h6 class="">{{ category.category_name }}</h6>
+		<button type="button" class="btn btn-outline-primary"><a href='/update/{{category.id}}'>Edit</a></button>
+		<button type="button" class="btn btn-outline-danger"><a href='/delete/{{ category.id }}'>Delete</a></button>
+		{% endfor %}
+	</div>
+
         <div class="col mx-4">
           <h3 class="mb-3"><i class="fas fa-th-list"></i> To-do</h3>
+	  {% for task in user.user_task %}
           <div class="col border border-2 rounded p-2">
-            <h5 class="fw-bold p-2">Work with AirBnB Project</h5>
+	  <h5 class="fw-bold p-2">{{ task.task_name }}</h5>
             <p class="fs-6">
+	    {{ task.task_description }}
             </p>
             <hr>
             <div class="priority-category">
-              <h6 class="priority-low"><span></span></h6>
+	      <h6 class="priority-low"><span>{{ task.task_priority }}</span></h6>
               <h6 class="category-name"><span></span></h6>
               <h6 class="category-name"><span></span></h6>
+	      <button type="button" class="btn btn-outline-danger"><a href='/delete-task/{{ task.id }}'>Delete</a></button>
             </div>
             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               <i class="fas fa-ellipsis-v"></i>
@@ -142,6 +163,7 @@
               </div>
             </div>
           </div>
+	  {% endfor %}
         </div>
         <!-- In progress -->
         <div class="col mx-4">

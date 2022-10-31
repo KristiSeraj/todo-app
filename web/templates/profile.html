@@ -131,8 +131,8 @@
           <h3 class="mb-3">Categories</h3>
           {% for category in user.user_category %}
           <h6 class="category">{{ category.category_name }}</h6>
-          <button type="button" class="btn btn-outline-danger changeBtn"><a href='/delete/{{ category.id }}'>Delete</a></button>
-          <button type="button" class="btn btn-outline-primary"><a href='/update/{{category.id}}'>Edit</a></button>
+          <button type="button" class="btn btn-outline-primary changeBtn">Edit</button>
+          <button type="button" class="btn btn-outline-danger"><a href='/delete/{{ category.id }}'>Delete</a></button>
           {% endfor %}
         </div>
 

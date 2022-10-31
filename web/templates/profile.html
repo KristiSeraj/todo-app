@@ -69,14 +69,14 @@
                     </select>
                   </div>
 		  -->
-		  <div class="mb-3">
-  			{% for category in user.user_category %}
-  			<div class="form-check form-check-inline">
-  				<input class="form-check-input" type="checkbox" name="taskCategory" value="{{category}}">
-  				<label class="form-check-label">{{category.category_name}}</label>
-  			</div>
-  			{% endfor %}
-		</div>
+                    <div class="mb-3">
+                      {% for category in user.user_category %}
+                      <div class="form-check form-check-inline">
+                        <label class="form-check-label">{{category.category_name}}</label>
+                        <input class="form-check-input" type="checkbox" name="taskCategory" aria-label="Category" value="{{category}}">
+                      </div>
+                      {% endfor %}
+                  </div>
 		  
                   <div class="mb-3">
                     <h6>Priority</h6>
@@ -127,29 +127,29 @@
     <!-- TODO -->
     <div class="container">
       <div class="d-flex">
-	<div class="col mx-4">
-		<h3 class="mb-3">Categories</h3>
-		{% for category in user.user_category %}
-		<h6 class="">{{ category.category_name }}</h6>
-		<button type="button" class="btn btn-outline-primary"><a href='/update/{{category.id}}'>Edit</a></button>
-		<button type="button" class="btn btn-outline-danger"><a href='/delete/{{ category.id }}'>Delete</a></button>
-		{% endfor %}
-	</div>
+        <div class="col mx-4">
+          <h3 class="mb-3">Categories</h3>
+          {% for category in user.user_category %}
+          <h6 class="category">{{ category.category_name }}</h6>
+          <button type="button" class="btn btn-outline-danger changeBtn"><a href='/delete/{{ category.id }}'>Delete</a></button>
+          <button type="button" class="btn btn-outline-primary"><a href='/update/{{category.id}}'>Edit</a></button>
+          {% endfor %}
+        </div>
 
         <div class="col mx-4">
           <h3 class="mb-3"><i class="fas fa-th-list"></i> To-do</h3>
-	  {% for task in user.user_task %}
+	        {% for task in user.user_task %}
           <div class="col border border-2 rounded p-2">
-	  <h5 class="fw-bold p-2">{{ task.task_name }}</h5>
-            <p class="fs-6">
-	    {{ task.task_description }}
-            </p>
-            <hr>
+	            <h5 class="fw-bold p-2">{{ task.task_name }}</h5>
+              <p class="fs-6">
+	            {{ task.task_description }}
+              </p>
+              <hr>
             <div class="priority-category">
-	      <h6 class="priority-low"><span>{{ task.task_priority }}</span></h6>
+	            <h6 class="priority-low"><span>{{ task.task_priority }}</span></h6>
               <h6 class="category-name"><span></span></h6>
               <h6 class="category-name"><span></span></h6>
-	      <button type="button" class="btn btn-outline-danger"><a href='/delete-task/{{ task.id }}'>Delete</a></button>
+	            <button type="button" class="btn btn-outline-danger"><a href='/delete-task/{{ task.id }}'>Delete</a></button>
             </div>
             <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
               <i class="fas fa-ellipsis-v"></i>
@@ -163,7 +163,7 @@
               </div>
             </div>
           </div>
-	  {% endfor %}
+	        {% endfor %}
         </div>
         <!-- In progress -->
         <div class="col mx-4">
